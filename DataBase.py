@@ -5,9 +5,9 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
 
 #SQLALCHEMY_DATABASE_URL = "postgresql+asyncpg://postgres:root@localhost:5432/dentist_db"
-SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL")
+DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL")
 
-engine = create_async_engine(SQLALCHEMY_DATABASE_URL, echo=True)
+engine = create_async_engine(DATABASE_URL, echo=True)
 AsyncSession = async_sessionmaker(engine, expire_on_commit=False)
 
 
