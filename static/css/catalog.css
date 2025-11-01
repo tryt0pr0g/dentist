@@ -1,0 +1,88 @@
+/* Стили для страницы каталога (catalog.html) */
+
+/* Заголовок страницы */
+.catalog-header {
+    margin-bottom: 2.5rem;
+    padding-top: 1rem;
+    /* Устанавливаем синий цвет (#0d6efd) */
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+/* Контейнер для всех карточек услуг */
+.services-grid {
+    /* Используем большую сетку с отступами 4 для хорошего расстояния (Bootstrap g-4 в HTML) */
+    margin-top: 2rem;
+}
+
+/* Стилизация карточки услуги */
+.service-card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Гарантируем одинаковую высоту */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Эффект при наведении */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-card-body {
+    flex-grow: 1; /* Чтобы тело карточки заполнило доступное пространство */
+    padding: 1.5rem;
+
+    /* ИСПРАВЛЕНИЕ: Делаем тело карточки Flex-контейнером
+       для вертикального выравнивания элементов внутри него */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card h5 {
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.75rem;
+}
+
+/* ОПИСАНИЕ: Растягиваем его, чтобы оно оттолкнуло цену и кнопку вниз */
+.service-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Занимает все свободное вертикальное пространство */
+    margin-bottom: 1rem; /* Добавляем отступ после описания перед ценой/кнопкой */
+}
+
+/* Цена в карточке */
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* Устанавливаем синий цвет (#0d6efd) */
+    color: #0d6efd;
+    /* margin-top: auto; УДАЛЕНО, так как растяжение p решило проблему */
+    margin-bottom: 0.5rem; /* Добавляем отступ перед кнопкой */
+}
+
+.service-price small {
+    font-weight: 400;
+    color: #6c757d;
+}
+
+/* Кнопка */
+.service-card .btn {
+    width: 100%;
+    /* margin-top: 1rem; УДАЛЕНО: используем отступы сверху в service-price */
+}
+
+/* ИСПРАВЛЕНИЕ ЦВЕТА КНОПКИ: Переопределяем btn-success на синий цвет */
+.service-card .btn-success {
+    --bs-btn-bg: #0d6efd;
+    --bs-btn-border-color: #0d6efd;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-btn-hover-border-color: #0b5ed7;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a58ca;
+}

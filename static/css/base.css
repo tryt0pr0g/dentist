@@ -1,0 +1,74 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #28a745;
+    --dental-blue: #00bcd4;
+    --bg-light: #f8f9fa;
+    --text-dark: #343a40;
+}
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.background {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex-grow: 1;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.nav-link {
+    font-weight: 600; /* ИСПРАВЛЕНО: Устанавливаем единую толщину 600 */
+    color: var(--text-dark) !important;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 2px solid transparent;
+}
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    border-bottom-color: var(--primary-color);
+}
+.nav-link-active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    border-bottom-color: var(--primary-color);
+}
+header .nav li {
+    margin: 0 8px; /* Горизонтальный отступ для фикса слипания */
+}
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dental-blue);
+    margin-left: 15px;
+}
+/* УДАЛЕНО: Класс .hidden-element удален, так как используется Bootstrap d-none */
+footer {
+    background-color: var(--text-dark);
+    color: var(--bg-light);
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+/* АНИМАЦИЯ ПЛАВНОГО ПОЯВЛЕНИЯ */
+.content-animated {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block stylesheets %}
+<!-- Подключаем файл с уникальными стилями для главной страницы -->
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block title %}
+Стоматология | Ваша Здоровая Улыбка
+{% endblock %}
+
+{% block header_links %}
+<!-- Дополнительные ссылки в хедере (пока оставляем пустым, так как основные ссылки есть в base.html) -->
+{% endblock %}
+
+{% block body %}
+<!-- Основной контент страницы: Герой-секция и описание клиники -->
+<div class="container my-5 content-animated">
+    <div class="p-5 text-center bg-light rounded-3 shadow-lg hero-section">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4 fw-bold mb-3 text-primary">Клиника "PerfectSmile"</h1>
+            <p class="lead mb-4 text-dark-50">
+                Мы предлагаем полный спектр стоматологических услуг: от профессиональной гигиены до сложного протезирования. Доверьте свою улыбку экспертам!
+            </p>
+            <hr class="my-4">
+
+            <h2 class="h4 fw-bold text-secondary mb-3 text-primary">
+                Почему выбирают нас?
+            </h2>
+            <p class="text-muted mb-5">
+                Наша клиника — идеальное решение для клиента, который ценит **качество, безболезненность и индивидуальный подход**. Мы используем только современное европейское оборудование и сертифицированные материалы, что гарантирует долгосрочный результат. Забудьте о страхе перед стоматологом — с нами лечение проходит комфортно и эффективно.
+            </p>
+
+            <!-- Кнопка перехода в каталог (Услуги) -->
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="/services" id="catalogButton" class="btn btn-primary btn-lg px-4 me-sm-3 fw-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar-check-fill me-2" viewBox="0 0 16 16">
+                        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.174-6.333a.5.5 0 0 1 .707 0L13.75 9.424l-2.829 2.83a.5.5 0 0 1-.707 0L7.375 9.424 5.25 7.3a.5.5 0 0 1 .707-.707l1.75 1.75 3.536-3.536z"/>
+                    </svg>
+                    Записаться или Посмотреть Услуги
+                </a>
+            </div>
+
+            <!-- Информационный блок для сообщения -->
+            <div id="messageBox" class="mt-4 text-sm text-secondary">
+                Узнайте, как мы можем позаботиться о вашей улыбке.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

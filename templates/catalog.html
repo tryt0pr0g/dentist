@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/css/catalog.css">
+<!-- ОБЯЗАТЕЛЬНО: Добавляем Font Awesome для иконок -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+{% endblock %}
+
+{% block title %}
+Наши Услуги
+{% endblock %}
+
+{% block body %}
+<div class="container py-4">
+    <div class="content-animated" style="animation-delay: 0.1s;">
+        <h1 class="catalog-header text-center display-5">Полный список наших услуг</h1>
+        <p class="text-center text-muted lead">Выберите услугу, которая вам необходима, и запишитесь на прием прямо сейчас.</p>
+    </div>
+
+    <div class="row services-grid g-4 content-animated" style="animation-delay: 0.2s;">
+        {% for service in services %}
+        <div class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card service-card">
+                <div class="card-body service-card-body">
+                    <h5 class="card-title">{{ service.name }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
+
+                    <div class="service-price">
+                        {{ "{:,.2f}".format(service.price | float) }} <small>₽</small>
+                    </div>
+
+                    <!-- ИЗМЕНЕНИЕ: Разделяем кнопку записи и кнопку авторизации -->
+                    <div class="service-actions-container">
+                        <!-- 1. Кнопка записи (видна только авторизованным) -->
+                        <a href="/appointment?service_name={{ service.name }}" class="btn btn-success action-booking d-none">
+                            <i class="fa-solid fa-calendar-check me-2"></i>
+                            Записаться
+                        </a>
+                        <!-- 2. Кнопка/ссылка на авторизацию (видна только неавторизованным) -->
+                        <a href="/auth" class="btn btn-outline-primary action-auth d-none">
+                            Авторизуйтесь
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if not services %}
+    <div class="alert alert-warning text-center mt-5 content-animated" style="animation-delay: 0.3s;" role="alert">
+        К сожалению, в данный момент список услуг пуст. Пожалуйста, зайдите позже.
+    </div>
+    {% endif %}
+</div>
+
+<!-- Модальное окно, которое появляется, если пользователь не авторизован -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title" id="authModalLabel">Требуется авторизация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        Для записи на услугу вам необходимо войти в свой аккаунт или зарегистрироваться.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <a href="/auth" class="btn btn-primary">Войти</a>
+        <a href="/reg" class="btn btn-success">Регистрация</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/catalog.js"></script>
+{% endblock %}

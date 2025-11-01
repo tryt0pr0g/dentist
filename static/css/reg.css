@@ -1,0 +1,66 @@
+Я понял. Чтобы гарантировать, что вы получите весь код, я отправлю содержимое каждого файла регистрации как отдельное текстовое сообщение.
+
+Вот три файла, которые реализуют страницу регистрации:
+
+1. static/css/reg.css (Стили для формы регистрации)
+Этот файл содержит стили для центрирования и оформления формы.
+
+/* Стили для страницы Регистрации */
+
+.registration-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.registration-header {
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #343a40;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-register {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-register:hover {
+    background-color: #1e7e34;
+    border-color: #1c7430;
+    transform: translateY(-1px);
+}
+
+.login-link {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Стили для отображения сообщений */
+#messageContainer {
+    min-height: 25px; /* Резервируем место, чтобы избежать скачков */
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Стилизация чекбокса "Запомнить меня" */
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}

@@ -1,0 +1,19 @@
+<!-- Модальное окно, которое появляется, если пользователь не авторизован -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title" id="authModalLabel">Требуется авторизация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        Для записи на услугу вам необходимо войти в свой аккаунт или зарегистрироваться.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <a href="/auth" class="btn btn-primary">Войти</a>
+        <a href="/reg" class="btn btn-success">Регистрация</a>
+      </div>
+    </div>
+  </div>
+</div>

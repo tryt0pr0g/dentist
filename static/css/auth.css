@@ -1,0 +1,19 @@
+/* Минимальные стили для формы авторизации */
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: var(--primary-color) !important;
+    border-bottom: none;
+}
+
+.card-body {
+    padding: 2.5rem;
+}
+
+#authForm .btn-primary {
+    font-weight: 600;
+}

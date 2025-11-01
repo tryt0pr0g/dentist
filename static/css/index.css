@@ -1,0 +1,105 @@
+/* Улучшаем стили для главной страницы */
+
+/* Секция Hero для привлечения внимания - Сделаем ее более заметной */
+.hero-section {
+    /* Более выраженная тень для эффекта "всплывания" */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+    background-color: #ffffff; /* Чистый белый фон */
+    border: none; /* Убираем тонкую рамку, полагаемся на тень */
+    border-radius: 1.5rem !important; /* Чуть более сильные скругления */
+    padding: 4rem !important; /* Увеличиваем отступы, чтобы контент "дышал" */
+}
+
+/* Более сильный акцент на основном заголовке */
+.hero-section h1 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Усиление лид-абзаца для большей заметности */
+.hero-section .lead {
+    color: #343a40 !important; /* Почти черный для контраста */
+    font-size: 1.45rem; /* Немного больший размер шрифта */
+    font-weight: 500 !important;
+}
+
+.hero-section .text-muted {
+    color: #343a40 !important; /* Очень темный серый, высокий контраст */
+    font-size: 1.1rem !important; /* Увеличенный размер для лучшей читаемости */
+    font-weight: 500 !important; /* Умеренный вес шрифта */
+}
+
+/* Изменение цвета основного заголовка на более профессиональный синий */
+.text-primary {
+    color: #007bff !important; /* Яркий синий для акцента */
+}
+
+/* Стиль кнопки для перехода в каталог/записи */
+#catalogButton {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+#catalogButton:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px); /* Небольшой подъем при наведении */
+}
+
+/* Стиль для сообщения о действии */
+#messageBox {
+    font-size: 0.95rem;
+    color: #6c757d; /* Сдержанный серый */
+}
+
+/* --- Добавление стилей для Плавного Появления Контента --- */
+.content-animated {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInContent 0.8s ease-out forwards;
+}
+
+@keyframes fadeInContent {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Исправление Плавности Наведения на Ссылки --- */
+.nav-link {
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease;
+    box-sizing: border-box;
+    /* Установим минимальный размер, чтобы избежать скачков при hover/active */
+    padding: 0.5rem 0.75rem !important;
+}
+
+.nav-link:hover {
+    color: #0056b3 !important; /* Более темный синий при наведении */
+    background-color: rgba(0, 123, 255, 0.05);
+    border-radius: 0.3rem;
+}
+
+/* --- Стили для АКТИВНОЙ ССЫЛКИ --- */
+.nav-link-active {
+    color: #007bff !important; /* Основной синий цвет для выделения */
+    font-weight: bold; /* Жирный шрифт */
+    border-bottom: 2px solid #007bff; /* Подчеркивание */
+    background-color: rgba(0, 123, 255, 0.1); /* Легкий фоновый цвет */
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+/* --- Отступы между элементами списка навигации для избежания соприкосновения выделений --- */
+header .nav li {
+    margin: 0 4px; /* Добавляем небольшой горизонтальный отступ */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 2rem !important;
+    }
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
