@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.params import Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
@@ -45,7 +45,7 @@ async def setup_db():
 
 
 @app.post('/set_data_db')
-async def insert_initial_services(session: Session = Depends(get_session)):
+async def insert_initial_services(session: AsyncSession = Depends(get_session)):
     """
     Проверяет, существуют ли услуги в БД, и если нет, вставляет начальный набор данных.
     """
